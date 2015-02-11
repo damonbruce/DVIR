@@ -1,0 +1,12 @@
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\bin\Debug\RailDelivery.Core.dll.config
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\bin\Debug\RailDelivery.Core.dll
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\bin\Debug\RailDelivery.Core.pdb
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\obj\Debug\RailDelivery.Core.dll
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\obj\Debug\RailDelivery.Core.pdb
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\obj\Debug\RailDelivery.Core.csprojResolveAssemblyReference.cache
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\bin\Debug\RailDelivery.Core.dll.config
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\bin\Debug\RailDelivery.Core.dll
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\bin\Debug\RailDelivery.Core.pdb
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\obj\Debug\RailDelivery.Core.csprojResolveAssemblyReference.cache
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\obj\Debug\RailDelivery.Core.dll
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.Core\obj\Debug\RailDelivery.Core.pdb

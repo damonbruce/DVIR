@@ -1,0 +1,37 @@
+﻿CREATE TABLE [dbo].[DVIRTowed](
+	[DVIRTowedId] [int] IDENTITY(1,1) NOT NULL,
+	[DriverNo] [int] NULL,
+	[TrailerChassis] [varchar](11) NULL,
+	[Mileage] [varchar](20) NULL,
+	[Remark1] [varchar](40) NULL,
+	[Remark2] [varchar](40) NULL,
+	[NoDefects] [bit] NULL,
+	[BodyDoors] [bit] NULL,
+	[TieDowns] [bit] NULL,
+	[Lights] [bit] NULL,
+	[Reflectors] [bit] NULL,
+	[Suspension] [bit] NULL,
+	[Tires] [bit] NULL,
+	[WheelsRimsLugs] [bit] NULL,
+	[Brakes] [bit] NULL,
+	[LandingGear] [bit] NULL,
+	[KingpinUpperPlate] [bit] NULL,
+	[FifthWheelDolly] [bit] NULL,
+	[OtherCoupling] [bit] NULL,
+	[RearEndProtection] [bit] NULL,
+	[Other] [varchar](20) NULL,
+	[CreatedDateTime] [datetime] NULL,
+	[CertifyRepairsDate] [datetime] NULL,
+	[RepairsMadeFlag] [bit] NULL,
+	[NoRepairsNeededFlag] [bit] NULL,
+	[RONumber] [varchar](20) NULL,
+	[CertifiedBy] [varchar](30) NULL,
+	[Location] [varchar](30) NULL,
+	[ReviewingDriverDate] [datetime] NULL,
+	[ReviewingDriverName] [varchar](30) NULL,
+	[ReviewingDriverNumber] [varchar](10) NULL,
+ CONSTRAINT [PK_DVIRTowed] PRIMARY KEY CLUSTERED 
+(
+	[DVIRTowedId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]

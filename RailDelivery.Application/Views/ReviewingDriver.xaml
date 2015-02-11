@@ -1,0 +1,31 @@
+﻿<Window x:Class="RailDelivery.DVIRApp.Views.ReviewingDriver"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+        xmlns:viewModel="clr-namespace:RailDelivery.DVIRApp.ViewModel"
+        Height="238.806" Width="317" Title="Reviewing Driver" ResizeMode="NoResize"
+        Name="ReviewingDriverWindow" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <viewModel:ReviewingDriverViewModel x:Key="ViewModel" />
+    </Window.Resources>
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}">
+        <StackPanel Margin="0,0,0,-1">
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label FontWeight="Bold" Width="95">Date</Label>
+                <telerik:RadDatePicker Width="177" Validation.ErrorTemplate="{x:Null}" Culture="en" InputMode="DatePicker" SelectedDate="{Binding ReviewDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></telerik:RadDatePicker>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label FontWeight="Bold" Width="95">Name</Label>
+                <TextBox Width="175" Text="{Binding DriverName, Mode=TwoWay, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" MaxLength="30"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <Label FontWeight="Bold" Width="95">Driver Number:</Label>
+                <TextBox Width="176" Text="{Binding DriverNumber, Mode=TwoWay, NotifyOnTargetUpdated=True, UpdateSourceTrigger=PropertyChanged}" MaxLength="10"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <telerik:RadButton Margin="10" Padding="10" Command="{Binding SaveCommand}" IsEnabled="{Binding CanSave}">Save</telerik:RadButton>
+                <telerik:RadButton Margin="10" Padding="10" Command="{Binding CancelCommand}">Cancel</telerik:RadButton>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.125" name="DVIR">
+  <DataContextMoniker Name="/DVIRDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e345bb35-f1b2-472e-8639-6d2b0acfcd0b" absoluteBounds="0.75, 0.75, 2, 12.155174153645833">
+      <DataClassMoniker Name="/DVIRDataContext/DVIRPower" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2067f18a-b59f-4f92-a14f-e9ceaab537da" absoluteBounds="0.765, 1.21, 1.9700000000000002, 11.595174153645832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a69f0cb8-afb0-4db4-bf45-4a8be1a0fee0" absoluteBounds="3.75, 0.75, 2, 6.7707340494791666">
+      <DataClassMoniker Name="/DVIRDataContext/DVIRTowed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6022d1d-2649-4517-ae7e-5f947d0e66e0" absoluteBounds="3.765, 1.21, 1.9700000000000002, 6.2107340494791661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

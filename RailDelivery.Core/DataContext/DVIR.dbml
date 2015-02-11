@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DVIR" Class="DVIRDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=DVIR;Integrated Security=True" SettingsObjectName="RailDelivery.Core.Properties.Settings" SettingsPropertyName="DVIRConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DVIRPower" Member="DVIRPowers">
+    <Type Name="DVIRPower">
+      <Column Name="DVIRPowerId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DriverNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TractorId" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NoDefects" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CabDoorsWindows" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BodyDoors" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OilLeak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GreaseLeak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CoolantLeak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FuelLeak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherGeneral" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="GeneralRemark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="OilLevel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CoolantLevel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Belts" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherEngine" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EngineRemark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="GaugesWarning" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WindshieldWipers" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Horns" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HeaterDefroster" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Mirrors" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Steering" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Clutch" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ServiceBrakes" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ParkingBrake" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="EmergencyBrake" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Triangles" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FireExtinguisher" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherSafetyEquipment" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SpareFuses" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SeatBelts" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherInCab" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="InCabRemark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Lights" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reflectors" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Suspension" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tires" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WheelsRimsLugs" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Battery" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Exhaust" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Brakes" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="AirLines" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FifthWheel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherCoupling" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TieDowns" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherExterior" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ExteriorRemark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CertifyRepairsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RepairsMadeFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RONumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CertifiedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CertifiedLocation" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ReviewingDriverDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReviewingDriverName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ReviewingDriverNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DVIRTowed" Member="DVIRToweds">
+    <Type Name="DVIRTowed">
+      <Column Name="DVIRTowedId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DriverNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrailerChassis" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Mileage" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Remark1" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Remark2" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NoDefects" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BodyDoors" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TieDowns" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Lights" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Reflectors" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Suspension" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tires" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="WheelsRimsLugs" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Brakes" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LandingGear" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KingpinUpperPlate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FifthWheelDolly" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OtherCoupling" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RearEndProtection" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Other" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CreatedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CertifyRepairsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RepairsMadeFlag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RONumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CertifiedBy" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CertifiedLocation" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ReviewingDriverDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ReviewingDriverName" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ReviewingDriverNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

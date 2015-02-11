@@ -1,0 +1,165 @@
+﻿<Window x:Class="RailDelivery.Application.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                xmlns:viewmodel="clr-namespace:RailDelivery.DVIRApp.ViewModel"
+                Name="MainWindowView"
+                Title="Rail Delivery DVIR" WindowStartupLocation="CenterScreen" WindowState="Maximized" Height="787">
+    <Window.Resources>
+        <viewmodel:MainViewModel x:Key="ViewModel" />
+    </Window.Resources>
+    <StackPanel MinWidth="725" MinHeight="525" DataContext="{Binding Source={StaticResource ViewModel}}">
+        <telerik:GroupBox Header="Query">
+            <WrapPanel>
+                <StackPanel Orientation="Vertical" Margin="0,0,10,0">
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <Label MinWidth="100" FontWeight="Bold">Unit Number:</Label>
+                        <TextBox x:Name="txtUnitNumber" MinWidth="150" Width="257" Text="{Binding UnitNumber, Mode=TwoWay}"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal">
+                            <Label MinWidth="100" FontWeight="Bold">Begin Date:</Label>
+                            <telerik:RadDatePicker x:Name="dateStartDate" Validation.ErrorTemplate="{x:Null}" Culture="en" InputMode="DatePicker" Width="94" SelectedDate="{Binding StartDate, Mode=TwoWay}" IsTooltipEnabled="False"></telerik:RadDatePicker>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label MinWidth="68" HorizontalContentAlignment="Right" FontWeight="Bold" Width="58">End Date:</Label>
+                            <telerik:RadDatePicker x:Name="dateEndDate" Validation.ErrorTemplate="{x:Null}" DisplayFormat="Short" InputMode="DatePicker" SelectedDate="{Binding EndDate, Mode=TwoWay}" Width="94" Culture="en"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="5,10,10,0">
+                        <RadioButton x:Name="radQuery" Width="114" IsChecked="{Binding Path=PowerSelect, Mode=TwoWay}">Query Powered</RadioButton>
+                        <RadioButton x:Name="radTowed" IsChecked="{Binding TowedSelect, Mode=TwoWay}">Query Towed</RadioButton>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <telerik:RadButton x:Name="btnRunQuery" Margin="0" Padding="10" HorizontalAlignment="Left" Width="110" IsEnabled="{Binding CanQuery}" Command="{Binding SelectCommand}">Run Query</telerik:RadButton>
+                </StackPanel>
+            </WrapPanel>
+        </telerik:GroupBox>
+        <telerik:GroupBox Header="Query Results">
+            <StackPanel>
+                <telerik:RadGridView x:Name="rgvResults" IsReadOnly="True"  ShowGroupPanel="False" AutoGenerateColumns="False" MinHeight="150" MaxHeight="200" SelectedItem="{Binding Mode=TwoWay, Path=SelectedItem, Source={StaticResource ViewModel}}" ItemsSource="{Binding  Results, Source={StaticResource ViewModel}}">
+                    <telerik:RadGridView.Columns>
+                        <telerik:GridViewDataColumn Width="2*" Header="Unit Number" DataMemberBinding="{Binding UnitNumber}"/>
+                        <telerik:GridViewDataColumn Width="2*" Header="Date" DataMemberBinding="{Binding CreateDate}"/>
+                        <telerik:GridViewDataColumn Width="2*" Header="Driver Number" DataMemberBinding="{Binding DriverNumber}"/>
+                        <telerik:GridViewDataColumn Width="2*" Header="Powered/Towed" DataMemberBinding="{Binding ResultType}"/>
+                    </telerik:RadGridView.Columns>
+                </telerik:RadGridView>
+            </StackPanel>
+        </telerik:GroupBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <telerik:RadButton Margin="10,0,0,0" Padding="10" HorizontalAlignment="Left" IsEnabled="{Binding ObjControls}" Command="{Binding SaveCommand}">Save</telerik:RadButton>
+            <telerik:RadButton Name="CertifyButton" Margin="10,0,0,0" Padding="10" Command="{Binding CertifyCommand}" IsEnabled="{Binding CanBeCertify, Mode=OneWay}">Certify Repairs</telerik:RadButton>
+            <telerik:RadButton Name="ReviewButton" Margin="10,0,0,0" Padding="10" Command="{Binding RepairDriverCommand}" IsEnabled="{Binding CanReview, Mode=OneWay}">Reviewing Driver</telerik:RadButton>
+            <telerik:RadButton Name="ReportButton" Margin="10,0" Padding="10" Command="{Binding ReportCommand}" IsEnabled="{Binding SelectedValid}">Report</telerik:RadButton>
+        </StackPanel>
+        <telerik:GroupBox Header="Data Entry" Height="350">
+            <telerik:RadTabControl Name="DVIRTabControl" SelectedIndex="{Binding PoweredTab}">
+                <telerik:RadTabItem Header="Powered" IsEnabled="{Binding IsPowered}" HorizontalAlignment="Left" VerticalAlignment="Top" DataContext="{StaticResource ViewModel}">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <CheckBox IsChecked="{Binding SelectedPower.CabDoorsWindows, Mode=TwoWay}">Cab/Doors/Windows</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.BodyDoors, Mode=TwoWay}">Body/Doors</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.OilLeak, Mode=TwoWay}">Oil Leaks</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.GreaseLeak, Mode=TwoWay}">Grease Leak</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.CoolantLeak, Mode=TwoWay}">Coolant Leak</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.FuelLeak, Mode=TwoWay}">Fuel Leak</CheckBox>
+                            <Label>Other</Label>
+                            <TextBox Text="{Binding SelectedPower.OtherGeneral, Mode=TwoWay}" MaxLength="20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <CheckBox IsChecked="{Binding SelectedPower.OilLevel, Mode=TwoWay}">Oil Level</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.CoolantLevel, Mode=TwoWay}">Coolant Level</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Belts, Mode=TwoWay}">Belts</CheckBox>
+                            <Label>Other</Label>
+                            <TextBox Text="{Binding SelectedPower.OtherEngine, Mode=TwoWay}" MaxLength="20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <CheckBox IsChecked="{Binding SelectedPower.GuagesWarning, Mode=TwoWay}">Guages Warning Indicator</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.WinshieldWipers, Mode=TwoWay}">Windsheild Wipers/Washers</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Horns, Mode=TwoWay}">Horn(s)</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.HeaterDefroster, Mode=TwoWay}">Heater/Defroster</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Mirrors, Mode=TwoWay}">Mirrors</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Steering, Mode=TwoWay}">Steering</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Clutch, Mode=TwoWay}">Clutch</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.ServiceBrakes, Mode=TwoWay}">Service Brakes</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.ParkingBrake, Mode=TwoWay}">Parking Brake</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.EmergencyBrake, Mode=TwoWay}">Emergency Brake</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Triangles, Mode=TwoWay}">Triangles</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.FireExtinguisher, Mode=TwoWay}">Fire Extinguisher</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.OtherSafteyEquipment, Mode=TwoWay}">Other Saftey Equipment</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.SpareFuses, Mode=TwoWay}">Spare Fuses</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.SeatBelts, Mode=TwoWay}">Seat Belts</CheckBox>
+                            <!--<CheckBox IsChecked="{Binding SelectedPower.OtherInCab, Mode=TwoWay}">Other</CheckBox>-->
+                            <Label>Other</Label>
+                            <TextBox Text="{Binding SelectedPower.OtherInCab, Mode=TwoWay}" MaxLength="20"></TextBox>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <CheckBox IsChecked="{Binding SelectedPower.Lights, Mode=TwoWay}">Lights</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Reflectors, Mode=TwoWay}">Reflectors</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Suspension, Mode=TwoWay}">Suspension</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Tires, Mode=TwoWay}">Tires</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.WheelsRimsLugs, Mode=TwoWay}">Wheels/Rims/Lugs</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Battery, Mode=TwoWay}">Battery</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Exhaust, Mode=TwoWay}">Exhaust</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.Brakes, Mode=TwoWay}">Brakes</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.AirLines, Mode=TwoWay}">Air Lines</CheckBox>
+                            <!--<CheckBox IsChecked="{Binding SelectedPower.LightLine}">Light Line</CheckBox>-->
+                            <CheckBox IsChecked="{Binding SelectedPower.FifthWheel, Mode=TwoWay}">Fifth Wheel</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.OtherCoupling, Mode=TwoWay}">Other Coupling</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedPower.TieDowns, Mode=TwoWay}">Tie Downs</CheckBox>
+                            <Label>Other</Label>
+                            <TextBox Text="{Binding SelectedPower.OtherExterior, Mode=TwoWay}" MaxLength="20"></TextBox>
+                        </StackPanel>
+                        <StackPanel HorizontalAlignment="Right">
+                            <CheckBox IsChecked="{Binding SelectedPower.NoDefects, Mode=TwoWay}" HorizontalAlignment="Right">NO DEFECTS</CheckBox>
+                            <!--<Label>Remarks</Label>
+                            <TextBox Text="{Binding SelectedPower.Remark1, Mode=TwoWay}" Height="95" MaxLength="20"></TextBox>
+                            <Label Width="235">Shop Remarks</Label>
+                            <TextBox Text="{Binding SelectedPower.Remark2, Mode=TwoWay}" Height="95" MaxLength="20"></TextBox>-->
+                        </StackPanel>
+                    </StackPanel>
+                </telerik:RadTabItem>
+                <telerik:RadTabItem Header="Towed" IsEnabled="{Binding IsTowed}" HorizontalAlignment="Left" VerticalAlignment="Top" DataContext="{StaticResource ViewModel}">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel>
+                            <CheckBox IsChecked="{Binding SelectedTowed.BodyDoors, Mode=TwoWay}">Body/Doors</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.TieDowns, Mode=TwoWay}">Tie-Downs</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.Lights, Mode=TwoWay}">Lights</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.Reflectors, Mode=TwoWay}">Reflectors</CheckBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox IsChecked="{Binding SelectedTowed.Suspension, Mode=TwoWay}">Suspension</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.Tires, Mode=TwoWay}">Tires</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.WheelsRimsLugs, Mode=TwoWay}">Wheels/Rims/Lugs</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.Brakes, Mode=TwoWay}">Brakes</CheckBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox IsChecked="{Binding SelectedTowed.LandingGear, Mode=TwoWay}">Landing Gear</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.KingpinUpperPlate, Mode=TwoWay}">Kingpin/Upper plate</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.FifthWheelDolly, Mode=TwoWay}">Fifth-Wheel (Dolly)</CheckBox>
+                            <CheckBox IsChecked="{Binding SelectedTowed.OtherCoupling, Mode=TwoWay}">Other Coupling System</CheckBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox IsChecked="{Binding SelectedTowed.RearendProtection, Mode=TwoWay}">Rear-End Protection</CheckBox>
+                            <Label>Other</Label>
+                            <TextBox Text="{Binding SelectedTowed.Other, Mode=TwoWay}" MaxLength="20"></TextBox>
+                        </StackPanel>
+                        <StackPanel>
+                            <CheckBox IsChecked="{Binding SelectedTowed.NoDefects, Mode=TwoWay}">NO DEFECTS</CheckBox>
+                            <Label Width="235">Remarks</Label>
+                            <TextBox Text="{Binding SelectedTowed.Remark1, Mode=TwoWay}" Height="95"></TextBox>
+                            <Label>Shop Remarks</Label>
+                            <TextBox Text="{Binding SelectedTowed.Remark2, Mode=TwoWay}" Height="95"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                </telerik:RadTabItem>
+            </telerik:RadTabControl>
+        </telerik:GroupBox>
+        <StackPanel Visibility="Collapsed">
+            <CheckBox Name="UpdateAll" IsChecked="{Binding Update, Mode=TwoWay}">Test</CheckBox>
+        </StackPanel>
+    </StackPanel>
+
+</Window>

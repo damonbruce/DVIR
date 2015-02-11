@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D11F85B6-464D-4A6C-85BD-757D6958C1B6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RailDelivery.DVIRApp</RootNamespace>
+    <AssemblyName>RailDelivery.DVIRApp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WPF4">
+      <HintPath>..\packages\MvvmLightLibs.4.3.31.1\lib\net40\GalaSoft.MvvmLight.Extras.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WPF4">
+      <HintPath>..\packages\MvvmLightLibs.4.3.31.1\lib\net40\GalaSoft.MvvmLight.WPF4.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.4.3.31.1\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Telerik.Pivot.Core, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Pivot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.DataProviders.Adomd, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Pivot.DataProviders.Adomd.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.DataProviders.Queryable, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Pivot.DataProviders.Queryable.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Pivot.DataProviders.Xmla, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Pivot.DataProviders.Xmla.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Analytics, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Chart, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Charting, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataServices, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.DataServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataServices50, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.DataServices50.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.DataVisualization, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Diagrams.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Diagrams.Extensions, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Diagrams.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Docking, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.EntityFramework, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.EntityFramework60, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.EntityFramework60.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Expressions, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Expressions.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewers, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.FixedDocumentViewers.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.FixedDocumentViewersUI, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.FixedDocumentViewersUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GanttView, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.GanttView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Gauge, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Gauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ImageEditor, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Pivot, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Pivot.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.PivotFieldList, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.PivotFieldList.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ScheduleView, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.ScheduleView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Spreadsheet, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Fixed, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.Fixed.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.Spreadsheet.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Maths, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Maths.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.PersistenceFramework, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.PersistenceFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Scheduling.Core, Version=2013.3.1316.45, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Scheduling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="DataService\DataItem.cs" />
+    <Compile Include="DataService\DataService.cs" />
+    <Compile Include="DataService\IDataService.cs" />
+    <Compile Include="Helpers\OpenWindowMessage.cs" />
+    <Compile Include="Helpers\WindowType.cs" />
+    <Compile Include="Models\QueryResults.cs" />
+    <Compile Include="ViewModel\ReportViewModel.cs" />
+    <Compile Include="ViewModel\ReviewingDriverViewModel.cs" />
+    <Compile Include="ViewModel\CertifyRepairViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\CertifyRepairs.xaml.cs">
+      <DependentUpon>CertifyRepairs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReviewingDriver.xaml.cs">
+      <DependentUpon>ReviewingDriver.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\CertifyRepairs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReviewingDriver.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RailDelivery.Core\RailDelivery.Core.csproj">
+      <Project>{5755cf34-3773-4c90-bc6b-95d433255094}</Project>
+      <Name>RailDelivery.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assemblies\Telerik.Pivot.Core.dll" />
+    <Content Include="Assemblies\Telerik.Pivot.Core.pdb" />
+    <Resource Include="Assemblies\Telerik.Pivot.Core.xml" />
+    <Content Include="Assemblies\Telerik.Pivot.DataProviders.Adomd.dll" />
+    <Content Include="Assemblies\Telerik.Pivot.DataProviders.Adomd.pdb" />
+    <Resource Include="Assemblies\Telerik.Pivot.DataProviders.Adomd.xml" />
+    <Content Include="Assemblies\Telerik.Pivot.DataProviders.Queryable.dll" />
+    <Content Include="Assemblies\Telerik.Pivot.DataProviders.Queryable.pdb" />
+    <Resource Include="Assemblies\Telerik.Pivot.DataProviders.Queryable.xml" />
+    <Content Include="Assemblies\Telerik.Pivot.DataProviders.Xmla.dll" />
+    <Content Include="Assemblies\Telerik.Pivot.DataProviders.Xmla.pdb" />
+    <Resource Include="Assemblies\Telerik.Pivot.DataProviders.Xmla.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Analytics.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Analytics.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Analytics.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Chart.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Chart.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Chart.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Charting.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Charting.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Charting.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Data.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Data.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Data.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.DataServices.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.DataServices.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.DataServices.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.DataServices50.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.DataServices50.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.DataServices50.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.DataVisualization.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.DataVisualization.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.DataVisualization.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Diagrams.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Diagrams.Extensions.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Diagrams.Extensions.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Diagrams.Extensions.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Diagrams.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Diagrams.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Docking.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Docking.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Docking.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.EntityFramework.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.EntityFramework.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.EntityFramework.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.EntityFramework60.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.EntityFramework60.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.EntityFramework60.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Expressions.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Expressions.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Expressions.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.FixedDocumentViewers.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.FixedDocumentViewers.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.FixedDocumentViewers.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.FixedDocumentViewersUI.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.FixedDocumentViewersUI.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.FixedDocumentViewersUI.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.GanttView.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.GanttView.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.GanttView.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Gauge.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Gauge.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Gauge.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.GridView.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.GridView.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.GridView.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.ImageEditor.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.ImageEditor.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.ImageEditor.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Input.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Input.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Input.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Navigation.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Navigation.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Navigation.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.pdb" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Pivot.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Pivot.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Pivot.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.PivotFieldList.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.PivotFieldList.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.PivotFieldList.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.RibbonView.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.RibbonView.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.RibbonView.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.RichTextBoxUI.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.RichTextBoxUI.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.RichTextBoxUI.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.ScheduleView.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.ScheduleView.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.ScheduleView.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Spreadsheet.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Controls.Spreadsheet.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.Spreadsheet.xml" />
+    <Resource Include="Assemblies\Telerik.Windows.Controls.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Data.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Data.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Data.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Diagrams.Core.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Diagrams.Core.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Diagrams.Core.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Core.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Core.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Core.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Fixed.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Fixed.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Fixed.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Flow.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Flow.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Flow.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Html.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Html.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Html.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.OpenXml.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.OpenXml.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.FormatProviders.OpenXml.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Pdf.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Pdf.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Pdf.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Rtf.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Rtf.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Rtf.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Xaml.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Xaml.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.FormatProviders.Xaml.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.pdb" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.DataGrid.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.DataGrid.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Proofing.DataGrid.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.pdb" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.RadGridView.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Proofing.RadGridView.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Proofing.RadGridView.xml" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Proofing.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Spreadsheet.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Spreadsheet.FormatProviders.OpenXml.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Documents.Spreadsheet.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.Spreadsheet.xml" />
+    <Resource Include="Assemblies\Telerik.Windows.Documents.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Maths.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Maths.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Maths.xml" />
+    <Content Include="Assemblies\Telerik.Windows.PersistenceFramework.dll" />
+    <Content Include="Assemblies\Telerik.Windows.PersistenceFramework.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.PersistenceFramework.xml" />
+    <Content Include="Assemblies\Telerik.Windows.Scheduling.Core.dll" />
+    <Content Include="Assemblies\Telerik.Windows.Scheduling.Core.pdb" />
+    <Resource Include="Assemblies\Telerik.Windows.Scheduling.Core.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

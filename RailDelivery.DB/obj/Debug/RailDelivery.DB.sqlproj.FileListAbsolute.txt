@@ -1,0 +1,10 @@
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\bin\Debug\RailDelivery.DB.dacpac
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\bin\Debug\RailDelivery.DB.dll
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\bin\Debug\RailDelivery.DB.pdb
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\obj\Debug\RailDelivery.DB.dll
+C:\Users\Damon\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\obj\Debug\RailDelivery.DB.pdb
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\bin\Debug\RailDelivery.DB.dacpac
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\bin\Debug\RailDelivery.DB.dll
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\bin\Debug\RailDelivery.DB.pdb
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\obj\Debug\RailDelivery.DB.dll
+C:\Source\Repos\RailDelivery\RailDelivery\RailDelivery.DB\obj\Debug\RailDelivery.DB.pdb

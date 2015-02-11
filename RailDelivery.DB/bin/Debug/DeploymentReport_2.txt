@@ -1,0 +1,35 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[DVIRPower]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[DVIRPower].[NoRepairsNeededFlag] is being dropped, data loss could occur.
+       The column [dbo].[DVIRPower].[Remark1] is being dropped, data loss could occur.
+       The column [dbo].[DVIRPower].[Remark2] is being dropped, data loss could occur.
+       The type for column Belts in table [dbo].[DVIRPower] is currently  VARCHAR (20) NULL but is being changed to  BIT NULL.
+         Data loss could occur.
+       The type for column GreaseLeak in table [dbo].[DVIRPower] is currently  VARCHAR (20) NULL but is being changed to  BIT
+         NULL. Data loss could occur.
+       The type for column OilLeak in table [dbo].[DVIRPower] is currently  VARCHAR (20) NULL but is being changed to  BIT
+         NULL. Data loss could occur.
+       The column [dbo].[DVIRTowed].[CertifiedLocation] is being dropped, data loss could occur.
+
+** User actions
+     Table rebuild
+       [dbo].[DVIRPower] (Table)
+     Alter
+       [dbo].[DVIRTowed] (Table)
+
+** Supporting actions
+
+The column [dbo].[DVIRPower].[NoRepairsNeededFlag] is being dropped, data loss could occur.
+The column [dbo].[DVIRPower].[Remark1] is being dropped, data loss could occur.
+The column [dbo].[DVIRPower].[Remark2] is being dropped, data loss could occur.
+The type for column Belts in table [dbo].[DVIRPower] is currently  VARCHAR (20) NULL but is being changed to  BIT NULL. Data loss could occur.
+The type for column GreaseLeak in table [dbo].[DVIRPower] is currently  VARCHAR (20) NULL but is being changed to  BIT NULL. Data loss could occur.
+The type for column OilLeak in table [dbo].[DVIRPower] is currently  VARCHAR (20) NULL but is being changed to  BIT NULL. Data loss could occur.
+The column [dbo].[DVIRTowed].[CertifiedLocation] is being dropped, data loss could occur.
+
